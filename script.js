@@ -803,7 +803,7 @@ var PACMAN = (function () {
     
     function dialog(text) {
         ctx.fillStyle = "#FFFF00";
-        ctx.font      = "18px Calibri";
+        ctx.font      = "14px BDCartoonShoutRegular";
         var width = ctx.measureText(text).width,
             x     = ((map.width * map.blockSize) - width) / 2;        
         ctx.fillText(text, x, (map.height * 10) + 8);
@@ -900,7 +900,7 @@ var PACMAN = (function () {
         ctx.fillText("s", 10, textBase);
 
         ctx.fillStyle = "#FFFF00";
-        ctx.font      = "14px Calibri";
+        ctx.font      = "14px BDCartoonShoutRegular";
         ctx.fillText("Score: " + user.theScore(), 30, textBase);
         ctx.fillText("Level: " + level, 260, textBase);
     }
@@ -1267,16 +1267,3 @@ Object.prototype.clone = function () {
     }
     return newObj;
 };
-
-$(function(){
-  var el = document.getElementById("pacman");
-
-  if (Modernizr.canvas && Modernizr.localstorage && 
-      Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
-    window.setTimeout(function () { PACMAN.init(el, "https://raw.githubusercontent.com/daleharvey/pacman/master/"); }, 0);
-  } else { 
-    el.innerHTML = "Sorry, needs a decent browser<br /><small>" + 
-      "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
-  }
-});
-
